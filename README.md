@@ -1,9 +1,8 @@
-Permite enviar coches a un concesionario - sendCoche
-Permite ver los coches de un concesionario  - getCochesConcesionario
-Permite vender coches a un cliente  - sellCoche
-Permite ver los coches de un cliente    - getCochesCliente
-Permite eliminar coche de un concesionario  - deleteCocheConcesionario
-Permite eliminar coche de un cliente    - deleteCocheCliente
-Permite traspasar un coche de un cliente a otro - traspasoCoche
-Permite añadir dinero a un cliente para poder comprar un coche  - addDineroCliente
-Permite bloquear la venta a ciertos concesionarios  - blockConcesionario
+# Práctica 3 - Jesús Cuesta Bartolomé
+
+## Funciones
+
+El programa consta de los siguientes endpoints:
+
+1. `.get("/allcharacters/:pageNumber")` Este endpoint devuelve todos los personajes de la API de manera paginada. El parámetro pageNumber indica el número de página que se quiere obtener. Hay 42 paginas en total.
+

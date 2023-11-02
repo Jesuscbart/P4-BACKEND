@@ -1,7 +1,7 @@
 import { Request, Response } from "npm:express@4.18.2";
 import CocheModel from "../db/coche.ts";
 
-const deleteCoche = async (req: Request, res: Response) => {
+const deleteModeloCoche = async (req: Request, res: Response) => {
   try {
     const { matricula } = req.params;
     const coche = await CocheModel.findOneAndDelete({ matricula }).exec();
@@ -16,4 +16,4 @@ const deleteCoche = async (req: Request, res: Response) => {
   }
 };
 
-export default deleteCoche;
+export default deleteModeloCoche;

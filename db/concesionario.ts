@@ -7,6 +7,7 @@ const concesionarioSchema = new Schema(  // Se crea el esquema de mongoose
   {
     nombre: { type: String, required: true, unique: true }, // Se define el campo nombre de tipo String
     coches: [{ type: Schema.Types.ObjectId, ref: "Coches" }], // Se define el campo coches de tipo Array de tipo ObjectId
+    ventasBloqueadas: { type: Boolean, default: false }, // Se define el campo ventasBloqueadas de tipo Boolean
   },
   { timestamps: true }  
 );  
