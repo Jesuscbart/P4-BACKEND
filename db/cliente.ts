@@ -1,5 +1,5 @@
 import mongoose from "npm:mongoose@7.6.3";
-import { Coche, Concesionario, Cliente } from "../types.ts";
+import { Cliente } from "../types.ts";
 
 const Schema = mongoose.Schema; // Se crea un esquema de mongoose
 
