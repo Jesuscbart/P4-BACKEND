@@ -1,6 +1,5 @@
 import { Request, Response } from "npm:express@4.18.2";
 import ConcesionarioModel from "../db/concesionario.ts";
-import CocheModel from "../db/coche.ts";
 
 const getCochesConcesionario = async (req: Request, res: Response) => {
   const { concesionario } = req.params;
