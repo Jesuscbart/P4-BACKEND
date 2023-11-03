@@ -12,7 +12,7 @@ const cocheSchema = new Schema(  // Se crea el esquema de mongoose
   { timestamps: true }  
 );  
 
-export type CocheModelType = mongoose.Document
+export type CocheModelType = mongoose.Document & Omit<Coche, "id">;
 
 const CocheModel = mongoose.model<CocheModelType>("Coches", cocheSchema);
 

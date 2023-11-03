@@ -1,7 +1,7 @@
 export type Coche = { //Defino el tipo Coche
     id: number;
     matricula: string;
-    nombre: string;   //Nombre del modelo
+    nombre: string;   //Nombre del modelo de coche
     precio: number;
     cliente: Cliente;
     concesionario: Concesionario;
