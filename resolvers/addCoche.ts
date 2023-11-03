@@ -1,5 +1,4 @@
 import {Request, Response} from "npm:express@4.18.2";
-import { Coche } from "../types.ts";
 import cocheModel from "../db/coche.ts";
 
 const addCoche = async (req: Request, res: Response) => {
