@@ -1,3 +1,5 @@
+import mongoose from "npm:mongoose@7.6.3";  //Importo mongoose
+
 export type Coche = { //Defino el tipo Coche
     id: number;
     matricula: string;
@@ -12,12 +14,12 @@ export type Coche = { //Defino el tipo Coche
     dni: string;
     nombre: string;
     dinero: number;
-    coches: Coche[];
+    coches: mongoose.Types.ObjectId[];  //Array de tipo ObjectId para almacenar los coches. Se usa mongoose.Types.ObjectId porque es el tipo que usa mongoose para los id 
   };
 
   export type Concesionario = {  //Defino el tipo Concesionario
     id: number;
     nombre: string;
-    coches: Coche[];
+    coches: mongoose.Types.ObjectId[];
     ventasBloqueadas: boolean;
 };

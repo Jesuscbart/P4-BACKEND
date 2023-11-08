@@ -8,7 +8,7 @@ const clienteSchema = new Schema(     // Se crea el esquema de mongoose
     dni: { type: String, required: true, unique: true },        // Se define el campo dni de tipo String (único)
     nombre: { type: String, required: true },                   // Se define el campo nombre de tipo String
     dinero: { type: Number, required: true },                   // Se define el campo dinero de tipo Number
-    coches: [{ type: Schema.Types.ObjectId, ref: "Coches" }],   // Se define el campo coches de tipo Array de tipo ObjectId
+    coches: [{ type: mongoose.Schema.Types.ObjectId, ref: "Coches" }],   // Se define el campo coches de tipo Array de tipo ObjectId
   },
   { timestamps: true }  
 );  
