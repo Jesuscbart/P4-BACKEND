@@ -32,12 +32,21 @@ const sellCoche = async (req: Request, res: Response) => {
     // Buscar el cliente
     const cliente = await ClienteModel.findOne({ dni: dnicliente });
     if (!cliente) {
-      return res.status(404).send("Cliente no encontrado.");
+      const error={
+        "error":"client_not_found",
+        "mensage": "The client was not found in the database. "
+      }
+      return res.status(404).json(error);
     }
 
     // Comprobar que el cliente tenga suficiente dinero
     if (cliente.dinero < coche.precio) {
-      return res.status(400).send("El cliente no tiene suficiente dinero.");
+      //return res.status(400).send("El cliente no tiene suficiente dinero.");
+      const error={
+        "error":"not_enough_money",
+        "mensage": "The customer does not have enough money to perform the transaction. "
+      }
+      return res.status(400).json(error);
     }
 
     // Retirar el coche del concesionario

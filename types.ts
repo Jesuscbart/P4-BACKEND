@@ -19,4 +19,5 @@ export type Coche = { //Defino el tipo Coche
     id: number;
     nombre: string;
     coches: Coche[];
+    ventasBloqueadas: boolean;
 };

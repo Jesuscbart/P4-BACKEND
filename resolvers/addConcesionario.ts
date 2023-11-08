@@ -4,14 +4,21 @@ import concesionarioModel from "../db/concesionario.ts";
 const addConcesionario = async (req: Request, res: Response) => {
     const {nombre} = req.body;                      //Variables que se reciben del body
     if(!nombre){                                    //Si no se recibe el nombre     
-        res.status(400).send("Missing name");       //Se devuelve un error
-        return;
+        const error={                               //Se devuelve un error
+            "error":"missing_data",
+            "mensage": "The name is missing. "
+          }
+          return res.status(400).json(error);
     }
 
     const alreadyExists = await concesionarioModel.findOne({ nombre }).exec();  //Se busca el concesionario por nombre
     if(alreadyExists){                                                          //Si ya existe
         res.status(400).send("El concesionario ya existe");                     //Se devuelve un error
-        return;
+        const error={
+            "error":"already_exists",
+            "mensage": "The dealer already exists. "
+          }
+          return res.status(400).json(error);
     }
 
     const concesionario = new concesionarioModel({      //Se crea el concesionario
