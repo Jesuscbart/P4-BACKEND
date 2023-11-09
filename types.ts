@@ -1,7 +1,7 @@
 import mongoose from "npm:mongoose@7.6.3";  //Importo mongoose
 
 export type Coche = { //Defino el tipo Coche
-    id: number;
+    id: string;
     matricula: string;
     nombre: string;   //Nombre del modelo de coche
     precio: number;
@@ -10,7 +10,7 @@ export type Coche = { //Defino el tipo Coche
   };
   
   export type Cliente = {  //Defino el tipo Cliente
-    id: number;
+    id: string;
     dni: string;
     nombre: string;
     dinero: number;
@@ -18,8 +18,8 @@ export type Coche = { //Defino el tipo Coche
   };
 
   export type Concesionario = {  //Defino el tipo Concesionario
-    id: number;
+    id: string;
     nombre: string;
-    coches: mongoose.Types.ObjectId[];
+    coches: mongoose.Types.ObjectId[];  //Array de tipo ObjectId para almacenar los coches. Se usa mongoose.Types.ObjectId porque es el tipo que usa mongoose para los id
     ventasBloqueadas: boolean;
 };
