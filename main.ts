@@ -36,6 +36,9 @@ try{
     app.use(express.json());    //Uso json
 
     app
+
+    .get("/", (_req: Request, res: Response) => { res.send("API ready to use") })                            //Ruta inicial por defecto
+
     .post("/addCoche", addCoche)                                                                             //Añado coche
     .delete("/deleteModeloCoche/:matricula", deleteModeloCoche)                                              //Borro coche
     .post("/addConcesionario", addConcesionario)                                                             //Añado concesionario

@@ -42,6 +42,15 @@ const sendCoche = async (req: Request, res: Response) => {
       }
       return res.status(400).json(error);
     }
+    
+    // Verificar si el coche ya está asociado a algún concesionario
+    const isCarAlreadyInAnyDealer = await ConcesionarioModel.findOne({ coches: coche._id }).exec(); // Buscar por id del coche
+    if (isCarAlreadyInAnyDealer) {                                                                  // Si el coche ya está en algún concesionario
+      return res.status(400).json({                                                                 // Devolver error
+        "error": "car_already_in_another_dealer",
+        "message": "The car is already in another dealer."
+      });
+    }
 
     // Verificar si el concesionario tiene menos de 10 coches
     if (concesionario.coches.length >= 10) {                   // Si el concesionario tiene 10 o más coches
