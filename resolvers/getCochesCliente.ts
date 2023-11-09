@@ -9,11 +9,12 @@ const getCochesCliente = async (req: Request, res: Response) => {
     // Primero, obtener el cliente para obtener los IDs de sus coches
     const cliente = await ClienteModel.findOne({ dni: dnicliente });
 
-    if (!cliente) {                     // Si no se encuentra el cliente
-      return res.status(404).json({     // Devolver error
-        error: "client_not_found",
-        message: "The client was not found."
-      });
+    if (!cliente) {                               // Si no se encuentra el cliente
+      const error={                               // Devolver error
+        "error":"client_not_found",
+        "mensage": "The client was not found. "
+      }
+      return res.status(404).json(error);
     }
 
     // Obtener los coches usando los IDs
